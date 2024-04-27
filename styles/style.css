@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  color: #0f084d;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 15vh;
+  font-family: "Kanit", sans-serif;
+}
+
+h2 {
+  margin-top: 2vh;
+  text-align: center;
+}
+
+p {
+  width: 400px;
+  align-self: center;
+  line-height: 1.7;
+  font-size: 1.2em;
+}
+
+.card p {
+  color: #000;
+}
+
+.btn {
+  padding: 1em;
+  background-color: #ececec;
+  cursor: pointer;
+  border: unset;
+  transition: all 0.3s ease-in-out;
+  border-radius: 1em;
+  color: #fff;
+}
+
+.btn:hover {
+  box-shadow: 0 5px 10px #979797;
+}
+
+/* ________________________________ */
+/* Getting the user input section */
+/* ________________________________ */
+
+.getting-user-input {
+  max-width: 450px;
+  padding: 10px;
+  background-color: #ececec;
+  margin: 5vh auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1em;
+  box-shadow: 0 5px 10px #979797;
+}
+
+.user-input {
+  width: 70%;
+  padding: 0.5em 0.9em;
+  font-size: 1.2em;
+  border-radius: 1em;
+  border: unset;
+  transition: all 0.5s ease-in-out;
+}
+
+.user-input:focus-visible {
+  outline: unset;
+  box-shadow: 0 5px 10px #979797;
+}
+
+.getting-user-input .custom-button {
+  display: grid;
+  place-content: center;
+}
+
+.cir {
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.cir i {
+  transition: 0.7s ease-in-out;
+  color: #d76b6b;
+  font-size: 1.5em;
+}
+
+.cir:hover i {
+  transform: rotate(360deg);
+}
+
+/* ________________________________ */
+/* End of Getting the user input section */
+/* ________________________________ */
+
+/* ________________________________ */
+/* Showing the Results For the user section */
+/* ________________________________ */
+
+.showing-results {
+  width: 70%;
+  margin: 5vh auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.card {
+  width: 90%;
+  margin: 4vh auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid black;
+  padding: 1em 3em;
+  border-radius: 1em;
+  box-shadow: 0 5px 10px #979797;
+  animation: going-in-from-left 0.5s ease-in-out;
+}
+
+.finished .card {
+  animation: going-in-from-right 0.5s ease-in-out;
+  background-color: lightgreen;
+}
+
+.finished .card .danger,
+.finished .card .success {
+  display: none;
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.button-group .btn {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.danger {
+  background-color: #dc3545;
+}
+
+.success {
+  background-color: #198754;
+}
+
+/* ________________________________ */
+/* End of Showing the Results For the user section */
+/* ________________________________ */
+
+/* ________________________________ */
+/* Animation */
+/* ________________________________ */
+
+@keyframes going-in-from-left {
+  from {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes going-in-from-right {
+  from {
+    transform: translateX(30%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes going-out-to-left {
+  to {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+}
+
+.going-out-to-left {
+  animation: going-out-to-left 0.5s ease-in-out;
+}
